@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swim Coach Data Analysis — Matthew Waddell</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="index.html">Matthew Waddell</a>
+        <ul class="site-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="HarveyMuddCollegeHvZApp.html">HvZ App</a></li>
+          <li><a href="ShepherdsPantryDataAnalysis.html">Shepherd's Pantry Data Analysis</a></li>
+          <li><a href="SwimCoachDataAnalysis.html" class="active">Swim Coach Data Analysis</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="page">
+      <header class="article-header">
+        <h1>Swim Coaching Analysis</h1>
+        <p>Using data analysis to track team and individual performance and improve coaching methods.</p>
+      </header>
+
+      <article class="article-body">
+        <p>
+          I coached swimming at Glendora Country Club CA from Spring 2018 to
+          Summer 2019.
+        </p>
+        <p>
+          In addition to designing and implementing daily workouts to help
+          athletes further gain or enhance competencies, communicating directly
+          with parents to address participant progress and challenges, and
+          maintaining a safe, fun, and competitive learning environment for
+          participants, I employed Data Analysis to analyze team and individual
+          swimming performance to enhance coaching methods.
+        </p>
+        <p>
+          I made excel sheets per swim meet to track swimmer times. This enabled
+          me to analyze both holistic team and individual performance per swim
+          event type per swim meet.
+        </p>
+
+        <figure>
+          <img src="images_Swim/image1.png" alt="Distribution of team 100 yard Individual Medley times across the swim season" />
+        </figure>
+        <p>
+          This plot is highly representative of overall swim team improvement
+          since the 100 yard Individual Medley includes all four swim strokes in a
+          single event.
+        </p>
+        <p>
+          Per meet I calculated the standard deviation and means of the
+          team&rsquo;s 100 yard Individual Medley times in order to model said
+          times as normal distributions and track how those distributions change
+          across the swim season.
+        </p>
+        <p>
+          The meets are listed in the legend from top to bottom in chronological
+          order.
+        </p>
+        <p>
+          It is evident that the distribution of times moves leftward as time
+          goes on.
+        </p>
+        <p>
+          This indicates the team&rsquo;s holistic improvement in speed in the
+          100 yard Individual Medley.
+        </p>
+        <p>
+          In addition the spread and standard deviation is decreasing,
+          exemplifying that individual swim ability is also becoming more
+          standardized as the swim season went on.
+        </p>
+
+        <figure>
+          <img src="images_Swim/3dPlot.png" alt="3D probability distribution of swimmer age and 50 yard freestyle time across the season" />
+        </figure>
+        <p>
+          I also used the 50 yard freestyle to analyze overall swim team
+          improvement since, although it lacks the variety of strokes in the 100
+          yd Individual Medley, it has the quantitative advantage of being the
+          most common event swam by my swimmers.
+        </p>
+        <p>
+          For this plot the z value or height can be roughly understood (roughly
+          due to the plot being an estimated continuous probability distribution)
+          as the probability of a given swimmer in my group having a certain age
+          and 50 yard freestyle time.
+        </p>
+        <p>
+          The color represents the expected fraction of the swim season to have
+          passed given that a swimmer has a certain age and 50 yard freestyle
+          time and is measured on a continuous scale of red to green with red
+          representing the beginning of the swim season and green representing
+          the end.
+        </p>
+        <p>
+          The plot displays a bimodal distribution which suggests there are two
+          age groups that are most likely to swim the 50 yard freestyle in a
+          certain time range.
+        </p>
+        <p>
+          The first peak, which is higher and sharper, represents the older age
+          group, while the second, lower and broader peak represents the younger
+          age group.
+        </p>
+        <p>
+          Taken in conjunction with the shift in color, indicating the amount of
+          time passed in the swim season, the plot demonstrates that swimmers
+          around age 13 to 14.5 years show a high probability of achieving times
+          in the mid to high 20 seconds range as the season progresses. Younger
+          swimmers, around 11 to 12.5, have a broader range of times but also
+          improve as the season goes on.
+        </p>
+
+        <figure>
+          <img src="images_Swim/image2.png" alt="Lindsey's Individual Medley times throughout the season" />
+        </figure>
+        <p>
+          In addition to my more holistic analysis I plotted individual swimmer
+          times per event per meet throughout the season in order to track
+          improvement and see trends in order to recognize if there were specific
+          strokes or events that I should modify my practices to focus on.
+        </p>
+        <p>
+          For this example I have displayed Lindsey&rsquo;s IM times throughout
+          the season.
+        </p>
+        <p>
+          As you can see her times decreased throughout the season indicating
+          improvement across all four swimming strokes.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      &copy; 2026 Matthew Waddell
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Humans vs. Zombies Mobile App — Matthew Waddell</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="index.html">Matthew Waddell</a>
+        <ul class="site-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="HarveyMuddCollegeHvZApp.html" class="active">HvZ App</a></li>
+          <li><a href="ShepherdsPantryDataAnalysis.html">Shepherd's Pantry Data Analysis</a></li>
+          <li><a href="SwimCoachDataAnalysis.html">Swim Coach Data Analysis</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="page">
+      <header class="article-header">
+        <h1>Humans vs. Zombies Mobile Application</h1>
+        <p>A Flutter mobile app built for the Claremont Colleges&rsquo; Humans vs. Zombies sports competition.</p>
+      </header>
+
+      <article class="article-body">
+        <figure>
+          <img src="images_HvZ/image1.jpg" alt="Humans vs. Zombies mobile app screenshot" />
+        </figure>
+
+        <p>
+          I worked with fellow Harvey Mudd students to develop a Flutter mobile
+          application for the Claremont Colleges&rsquo; Humans vs. Zombies sports
+          competition.
+        </p>
+        <p>
+          In addition to development, my responsibilities included writing the
+          specifications for the Flutter GUI and participating in regular team
+          meetings on development progress that often included the app&rsquo;s
+          target user base of past and future participants in the Human vs Zombies
+          games, for feedback to inform our process.
+        </p>
+
+        <h2>We developed the app with the following requirements</h2>
+        <ul class="feature-grid">
+          <li><strong>Clear, Readable, and Documented Code</strong><span>Critical for creating a good usable product and for future editors to maintain and change the app.</span></li>
+          <li><strong>Game Management by Mods</strong><span>Moderators' ability to start, end, and reset an HvZ game is critical for the app's usability over multiple games.</span></li>
+          <li><strong>Player Registration and Account Creation</strong><span>Essential for tracking distinct players and testing the game.</span></li>
+          <li><strong>Player Login</strong><span>Necessary for players to access their distinct account and stats, critical for gameplay management.</span></li>
+          <li><strong>Admin Login for Mods with Different UI</strong><span>Mods need a distinctive way to manage the game, critical for enabling mods to edit the game in ways players can't.</span></li>
+          <li><strong>Zombie Players can Scan Human QR Feed Codes</strong><span>Crucial to gameplay, too complicated for mods to manage outside of the app.</span></li>
+          <li><strong>Printing Feed Codes for Non-App Users</strong><span>Important to include non-app-using players in the game.</span></li>
+          <li><strong>Purchasing Upgrades with Brains for Zombies</strong><span>Essential for game functionality, implementing brain currency transactions.</span></li>
+          <li><strong>Brain Transfer System</strong><span>Basic functionality for the game, crucial for managing the brain currency.</span></li>
+          <li><strong>Accessible Player List</strong><span>Essential for gameplay to know the role of each player.</span></li>
+          <li><strong>Humans Remaining Count on Home Screen</strong><span>Adds to the player data summary and enhances home screen engagement.</span></li>
+          <li><strong>Clear and Organized Visual Interface</strong><span>Critical for app usability, regardless of functionality.</span></li>
+          <li><strong>Easy Access to Important Game Information</strong><span>Useful for players, but information could alternatively be sent via emails.</span></li>
+          <li><strong>Mission Information Updates by Mods</strong><span>Critical for game management by moderators.</span></li>
+          <li><strong>Mods Adjusting Player Status</strong><span>Necessary for game management, especially for manual adjustments.</span></li>
+          <li><strong>Detailed Map of the 7Cs</strong><span>Gives players a layout of event locations, critical for new students and gameplay orientation.</span></li>
+          <li><strong>Player Statistics Tracking</strong><span>Important for gameplay and moderator information organization.</span></li>
+          <li><strong>Privacy-Respecting Default Location Settings</strong><span>Critical for respecting players' privacy.</span></li>
+          <li><strong>Story Tab</strong><span>Enhances player engagement by providing an organized and coherent story.</span></li>
+          <li><strong>Easy Access to Current Mission Information</strong><span>Valuable for missions, enhances player access to tasks and mission summaries.</span></li>
+          <li><strong>Optional Location Services for Easier Navigation</strong><span>Helps new players navigate.</span></li>
+          <li><strong>Moderator Notifications and Reminders</strong><span>Essential for gameplay organization and communication.</span></li>
+          <li><strong>Customizable Player Notifications</strong><span>Prevents overwhelming players with unnecessary information.</span></li>
+          <li><strong>Attendance Reporting via QR Scanning</strong><span>Low-cost, valuable feature for mods and players, integrating with mission-specific notifications.</span></li>
+          <li><strong>Map Showing Important Information</strong><span>Assists gameplay by dynamically displaying key places.</span></li>
+          <li><strong>Mod-adjustable Important Locations on Map</strong><span>Helps reduce gameplay confusion, though difficult to implement for the first release.</span></li>
+          <li><strong>Descriptions of Active Legendary Upgrades</strong><span>Allows players to understand and view upgrades.</span></li>
+          <li><strong>List of Legendary Upgrade Holders</strong><span>Useful for tracking legendaries, could be integrated with the main player list.</span></li>
+          <li><strong>Different UI for Human and Zombie Players</strong><span>Smoothens gameplay by restricting access based on player status.</span></li>
+          <li><strong>Game Data Saving by Mods</strong><span>Helps Mods track game state.</span></li>
+          <li><strong>Self-reporting for Turned Humans</strong><span>Adds convenience during final missions.</span></li>
+          <li><strong>Zombie Stun Timer Display</strong><span>Convenient for gameplay.</span></li>
+          <li><strong>Display of Player Numbers During Key Missions</strong><span>Adds to the game experience.</span></li>
+          <li><strong>Mission Countdown Banner on Home Screen</strong><span>Makes a more engaging gameplay experience.</span></li>
+          <li><strong>Stun Reporting by Human Players</strong><span>Introduces a new feature for human players.</span></li>
+          <li><strong>Personal Player Profile Page</strong><span>Nice for personal stat viewing.</span></li>
+          <li><strong>View Location of Active Moderators</strong><span>Useful for emergencies.</span></li>
+          <li><strong>Player Reporting of Large Groups via Map Pins</strong><span>Enhances gameplay interaction.</span></li>
+          <li><strong>Stun Timer for Zombies</strong><span>Adds fun.</span></li>
+          <li><strong>Custom Messages from Zombies on Feed Code Scan</strong><span>Contributes to player interaction.</span></li>
+          <li><strong>Task-specific Day Missions and Quests</strong><span>Helps organize mission tasks and can be managed by players.</span></li>
+          <li><strong>Location Sharing Options</strong><span>Offers flexibility in sharing locations.</span></li>
+          <li><strong>Direct Communication Channel to Mods</strong><span>Valuable for reporting.</span></li>
+          <li><strong>Zombie Ancestry Tree</strong><span>Interesting for tracking player and game history.</span></li>
+          <li><strong>Integrated Large Group Chats</strong><span>Convenient.</span></li>
+          <li><strong>Chat Support for Picture and Video Files</strong><span>Enhances chat functionality.</span></li>
+          <li><strong>Automatic Removal from Human Chat upon Turning</strong><span>Streamlines chat participation.</span></li>
+          <li><strong>Final Message Option for Turned Humans</strong><span>Adds a farewell feature.</span></li>
+        </ul>
+
+        <p>
+          This app was ultimately created to and accomplished providing an
+          enhanced gameplay experience for the players in the Claremont
+          Colleges&rsquo; traditional Humans vs Zombies sports competition.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      &copy; 2026 Matthew Waddell
+    </footer>
+  </body>
+</html>

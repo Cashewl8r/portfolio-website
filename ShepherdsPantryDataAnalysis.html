@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shepherd's Pantry Data Analysis — Matthew Waddell</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="index.html">Matthew Waddell</a>
+        <ul class="site-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="HarveyMuddCollegeHvZApp.html">HvZ App</a></li>
+          <li><a href="ShepherdsPantryDataAnalysis.html" class="active">Shepherd's Pantry Data Analysis</a></li>
+          <li><a href="SwimCoachDataAnalysis.html">Swim Coach Data Analysis</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="page">
+      <header class="article-header">
+        <h1>Shepherd&rsquo;s Pantry Data Analysis</h1>
+        <p>Survey analysis, machine learning, and Census data to guide outreach for a Los Angeles food bank.</p>
+      </header>
+
+      <article class="article-body">
+        <p>
+          I volunteered and performed Data Analysis for Los Angeles Food Bank
+          Shepherd&rsquo;s Pantry from Summer 2020-2022. This included aggregating
+          and analyzing data to identify client usage and satisfaction for their
+          three locations, developing rapport with clients by volunteering weekly
+          in food distribution and preparing a comprehensive analytics package for
+          the Executive Director based on the needs and demographics of the
+          clientele.
+        </p>
+        <p>
+          Below I go into more detail on four questions I answered and the
+          various methods I used to answer them to the benefit of the
+          Shepherd&rsquo;s Pantry Los Angeles Food Bank.
+        </p>
+
+        <ol class="question-list">
+          <li>What are the top needs of Clients?</li>
+          <li>Are the Needs Of Clients Location Specific?</li>
+          <li>Are Certain Ethnic Groups disproportionately represented in Shepherd&rsquo;s Pantry Clientele?</li>
+          <li>Does Shepherd&rsquo;s Pantry meet the needs of its surrounding area or is there an Outreach Problem to address?</li>
+        </ol>
+
+        <h2>1. What are the top needs of Clients?</h2>
+        <p>
+          Though there were complications in gathering data, such as requiring
+          versions in English, Spanish, and Mandarin, after acquiring and
+          tabulating each location&rsquo;s survey results, finding the answer to
+          this important question would prove to be the easiest of the above.
+        </p>
+        <p>
+          For each of the questions regarding need, I made a bar chart to display
+          each respective answer&rsquo;s percentage of occurrence.
+        </p>
+        <p>
+          For example here is a plot displaying the distribution of results for
+          the question on Client&rsquo;s preferences for Potential Shepherd&rsquo;s
+          Pantry Programs:
+        </p>
+        <figure>
+          <img src="images/image5.png" alt="Bar chart of client preferences for potential Shepherd's Pantry programs" />
+        </figure>
+        <p>
+          This chart enabled the Shepherd&rsquo;s Pantry Executive director to
+          make an informed choice on which programs to invest in. In particular it
+          appears that nutrition and English classes, as well as someone to pray
+          with are all top needs and priorities of Shepherd&rsquo;s Pantry
+          clientele.
+        </p>
+
+        <h2>2. Are the Needs Of Clients Location Specific?</h2>
+        <p>The methodology of answering this question proved more engaging.</p>
+        <p>
+          After vectorizing the needs and location data per client, I trained a
+          tensorflow model to find out with what accuracy said model could match
+          the input of the needs of a given client and with the Shepherd&rsquo;s
+          Pantry location (Baldwin Park, Glendora or Irwindale) which that client
+          came from.
+        </p>
+        <p>
+          The higher the accuracy of said model the more location specific we may
+          consider the needs of Shepherd&rsquo;s Pantry clientele to be.
+        </p>
+        <figure>
+          <img src="images/image6.png" alt="Distribution of Monte Carlo model accuracy versus trained model accuracy" />
+        </figure>
+        <p>
+          The model was able to match the needs of the clients to their
+          Shepherd&rsquo;s Pantry location with 50% accuracy. I then used a Monte
+          Carlo simulation to demonstrate the significance of this accuracy. For
+          each Monte Carlo Instance a model would determine each client&rsquo;s
+          location through random selection rather than through training on the
+          associations between need and location. The distribution of each Monte
+          Carlo Instance&rsquo;s accuracy is plotted above along with the accuracy
+          of our trained model for contrast. Our model&rsquo;s accuracy of .5 is
+          99.998th percentile in this distribution, implying that it is extremely
+          unlikely that needs are not location specific, such that we may
+          confidently assert that the needs of Shepherd&rsquo;s Pantry clients are
+          location specific.
+        </p>
+        <p>
+          Now the natural follow up question is to what extent are the needs of
+          clients location specific? By diving into our models behavior with more
+          specificity through a Confusion Matrix we can answer this question.
+        </p>
+        <figure>
+          <img src="images/image1.png" alt="Confusion matrix of predicted versus actual Shepherd's Pantry location" />
+        </figure>
+        <p>
+          This Confusion Matrix gives us the additional context of how location
+          specific client&rsquo;s needs are per location. We can derive from the
+          confusion matrix that &lsquo;0&rsquo; or Baldwin Park has the most
+          location specific needs since our model had the most success matching
+          client&rsquo;s needs to its location, followed by &lsquo;1&rsquo; or
+          Irwindale, and the location with the least location specific client
+          needs, &lsquo;2&rsquo; or Glendora.
+        </p>
+        <p>
+          This insight enabled me to assign the appropriate amount of weight to
+          location when analyzing client needs in my report to the
+          Shepherd&rsquo;s Pantry Executive Director.
+        </p>
+
+        <h2>3. Are Certain Ethnic Groups disproportionately represented in Shepherd&rsquo;s Pantry clientele?</h2>
+        <p>
+          For these last two exemplary questions, I utilized the US Census
+          Bureau&rsquo;s API in order to contrast their data with the data
+          collected by my survey.
+        </p>
+        <p>
+          First I created a heatmap of the distribution of client ethnicity per
+          Zip Code in order to establish a baseline understanding of the ethnic
+          demographics of the Shepherd&rsquo;s Pantry clientele.
+        </p>
+        <figure>
+          <img src="images/image7.png" alt="Heatmap of client ethnicity distribution by zip code" />
+        </figure>
+        <p>
+          My initial thoughts are to contrast the survey&rsquo;s ethnic
+          demographics per zip code with the US Census Bureau&rsquo;s ethnic
+          demographics per zip code. However, I quickly realized that such a
+          comparison will not account for the high variance that comes with the
+          low sample size of many of the zipcodes in my heatmap.
+        </p>
+        <p>
+          Rather than comparing ethnic demographics per zip code, I decided to
+          assume the distribution of client&rsquo;s zip codes is appropriate, with
+          no zip code over or under represented (an assumption put to the test in
+          my answer to the next exemplary question).
+        </p>
+        <p>
+          This allowed me to create an expected ethnic distribution from the
+          census data by calculating a weighted average of the census ethnic
+          distribution per zip code, weighted by the number of clients from said
+          zip code. I then plotted the expected census ethnic distribution next to
+          the survey&rsquo;s ethnic distribution for contrast.
+        </p>
+        <figure>
+          <img src="images/image8.png" alt="Bar chart comparing survey and Census ethnic distributions" />
+        </figure>
+        <p>
+          While visually the census and survey ethnic distributions appear
+          similar, I decided to substantiate that observation with a Monte Carlo
+          simulation.
+        </p>
+        <figure>
+          <img src="images/image3.png" alt="Distribution of Monte Carlo ethnic distribution variance" />
+        </figure>
+        <p>
+          Each Monte Carlo instance represents the variance of the ethnic
+          distribution of a sample of 321, the number of clients in the survey,
+          from the calculated expected ethnic distribution based on the US Census
+          Bureau&rsquo;s data and client count per zip code. The distribution of
+          said variances is plotted above along with the survey&rsquo;s variance
+          from the census for contrast. The survey&rsquo;s ethnic distribution
+          variance of approximately .0109 is 5th percentile in this distribution.
+          This implies that we may claim with confidence that the visual
+          differences demonstrated in the contrasting pie charts of ethnic
+          distribution between the survey and census data were largely due to
+          sample size. So we have substantiated the claim that if zip codes are
+          assumed to have been appropriately represented then there are no ethnic
+          groups which are disproportionately represented in the Shepherd&rsquo;s
+          Pantry Clientele.
+        </p>
+
+        <h2>4. Does Shepherd&rsquo;s Pantry meet the needs of its surrounding area or is there an Outreach Problem to address?</h2>
+        <p>
+          To answer this question I want to create an expected client count
+          metric per client zip code. I used as input to the expected client
+          count metric the distance of a zipcode&rsquo;s population weighted
+          longitude and latitude centroid from the nearest Shepherd&rsquo;s
+          Pantry, its population count, unemployment rate, and median income. I
+          then plotted a heatmap of the expected client count metric per zip code
+          (below on the left) next to a heatmap of the survey&rsquo;s client count
+          per zip code (below on the right) for contrast.
+        </p>
+        <figure class="side-by-side">
+          <img src="images/image2.png" alt="Heatmap of expected client count per zip code" />
+          <img src="images/image4.png" alt="Heatmap of survey client count per zip code" />
+        </figure>
+        <p>
+          The visual revelation of the amount of zip codes under-represented in
+          the Shepherd&rsquo;s Pantry clientele based on their need for assistance
+          and distance from Shepherd&rsquo;s Pantry enabled me to inform the
+          Executive Director of Shepherd&rsquo;s Pantry on which particular
+          communities would most benefit from the attention of his outreach
+          campaign efforts.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      &copy; 2026 Matthew Waddell
+    </footer>
+  </body>
+</html>
